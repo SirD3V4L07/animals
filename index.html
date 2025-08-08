@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Orgapedia</title>
+</head>
+<body>
+  <h1>Orgapedia - Animal Database</h1>
+
+  <table border="1">
+    <thead>
+      <tr><th>Name</th><th>Species</th><th>Family</th></tr>
+    </thead>
+    <tbody id="animal-table"></tbody>
+  </table>
+
+  <script>
+    async function fetchAnimals() {
+      const response = await fetch("/api/animals");
+      const animals = await response.json();
+
+      const table = document.getElementById("animal-table");
+      table.innerHTML = "";
+
+      animals.forEach(a => {
+        table.innerHTML += `<tr>
+          <td>${a.name}</td>
+          <td>${a.species}</td>
+          <td>${a.family}</td>
+        </tr>`;
+      });
+    }
+
+    fetchAnimals();
+  </script>
+</body>
+</html>

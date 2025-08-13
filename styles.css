@@ -1,0 +1,37 @@
+body {
+    display:flex;
+    width:100%;
+    flex-direction: column;
+    background-color: #e3d5ca;
+    align-items:center;
+    margin:0;
+}
+
+body h1 {
+    text-align: center;
+}
+
+#animal-table {
+    width:80%;
+
+}
+
+#animal-table thead {
+    background-color:#d5bdaf;
+    color:white;
+}
+
+#animal-tbody tr:nth-child(odd) {
+    background-color: #d6ccc2;
+}
+
+#animal-table td {
+    padding:3px;
+    padding-left:10px;
+}
+
+#animal-table th {
+    padding:5px;
+    font-size: 17px;
+    font-weight: 700;
+}
